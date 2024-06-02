@@ -8,28 +8,46 @@ namespace LINQ_Practice
 {
     public  class TernaryOperator
     {
-        public TernaryOperator()
+        public void  method_Syntax()
         {
             List<int> list = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            var result = list.Select(n => n%2==0 ? "even" : "Odd");
+            var result = list.Select(n => n%2==0 ? "even" : "Odd");  // return true and false 
+
             foreach (var s in result)
             {
                 Console.WriteLine(s);
             }
-        }
-        public void simple_linq()
-        {
-            List<int> list = new List<int> { 12, 123, 13, 14, 15, 16, 17, 18, };
+              
 
-            var result = from obj in list // store item in a object file 
+            Console.WriteLine("-----------------------Method syntax -------------------------");
+            var MethodSyntax = list.Where(obj => obj%2==0);
+            foreach(var s in MethodSyntax)
+            {
+                Console.WriteLine(s);
+            }
+
+            Console.WriteLine("-----------------------Max syntax -------------------------");
+            var _Max = (from obj in list
+                      select obj).Max();
+
+                Console.WriteLine(_Max);
+            
+
+            Console.WriteLine("-----------------------Query syntax -------------------------");
+      
+
+            var query = from obj in list // store item in a object file 
                          where obj % 2 == 0 // condition 
                          select obj;
-
-            foreach (var s in result )
+  
+            foreach (var s in query)
             {
                 Console.WriteLine(s); // print the values 
             }
         }
+
+
+
 
     }
 }
