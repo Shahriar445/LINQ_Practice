@@ -17,6 +17,19 @@ namespace LINQ_Practice
                 Console.WriteLine(s);
             }
         }
+        public void simple_linq()
+        {
+            List<int> list = new List<int> { 12, 123, 13, 14, 15, 16, 17, 18, };
+
+            var result = from obj in list // store item in a object file 
+                         where obj % 2 == 0 // condition 
+                         select obj;
+
+            foreach (var s in result )
+            {
+                Console.WriteLine(s); // print the values 
+            }
+        }
 
     }
 }
