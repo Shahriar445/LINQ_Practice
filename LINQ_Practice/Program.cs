@@ -41,3 +41,15 @@ foreach(var c in sel)
 {
     Console.WriteLine(c);
 }
+
+Console.WriteLine("-------------Generics class - -----------");
+
+
+// Generics class 
+
+Generics<int> setint = new Generics<int>(23);
+
+Console.WriteLine(setint.GetValue());
+
+Generics<string> setstring = new Generics<string>("shipon");
+Console.WriteLine(setstring.GetValue());
